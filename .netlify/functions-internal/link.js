@@ -24,7 +24,8 @@ exports.handler = async (event, context) => {
 		display: thing.display,
 		links: prs.links
 	}
-	fs.writeFileSync("config/links.json", data)
+	const data2write = JSON.stringify(data);
+	fs.writeFileSync("config/links.json", data2write)
 		console.log("Updated! (200)")
   	return {
     	statusCode: 200,
