@@ -15,6 +15,7 @@ exports.handler = async (event, context) => {
 	const thing = JSON.parse(dt)
 	const prs = JSON.parse(event.body)
 	console.log(prs.code)
+	console.log(event.body.code)
 	if (event.body.code === code) { 
 	const data = {
 		user: thing.user,
