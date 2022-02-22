@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
 	const params = querystring.parse(event.body);
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
-	const prs = JSON.parse(event.body)
+	const prs = JSON.stringify(event.body)
 	console.log("GOT: " + prs.code)
 	console.log("GOT: " + event.body.code)
 	console.log("RESPONSE:" + event.body)
