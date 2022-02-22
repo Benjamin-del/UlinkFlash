@@ -11,8 +11,8 @@ exports.handler = async (event, context) => {
 	const params = querystring.parse(event.body);
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
-	console.log(params.code)
-	if (params.code === code) { 
+	console.log(event.body.code)
+	if (event.body.code === code) { 
 	const data = {
 		user: thing.user,
 		profile: thing.profile,
