@@ -3,6 +3,7 @@ import thing from '/config/links.json';
 const code = process.env['code']
 
 export default function handler(req, res) {
+	res.end()
   if (req.method === 'POST') {
 		if (req.body.code === code) {
 			const data = {
@@ -20,14 +21,8 @@ export default function handler(req, res) {
   			if (err)
     			console.log(err);
   			else {
-					res.status(200)
-					res.end()
   			}
 			});
 		}
-	} else {
-		res.status(405)
-		res.json({ error: '405' })
-		res.end()
 	}
 }
