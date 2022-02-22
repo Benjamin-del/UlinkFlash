@@ -9,6 +9,7 @@ exports.handler = async (event, context) => {
   // queryStringParameters – it’ll be in the event body encoded as a query string
   if (event.httpMethod === "POST") {
 	const params = querystring.parse(event.body);
+	console.log(event.body)
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
 	console.log(event.body.code)
