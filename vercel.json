@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/link.js": {
+    "pages/api/link.js": {
       "includeFiles": "/public/link.json"
     }
   }
