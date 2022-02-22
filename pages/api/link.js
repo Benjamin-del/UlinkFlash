@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = "./public/links.json"
 const code = process.env['code']
-const dt = fs.readFileSync(path);
+const dt = require(path)
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
