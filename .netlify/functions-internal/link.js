@@ -1,7 +1,7 @@
 const fs = require('fs');
 //import thing from '/config/links.json';
 const code = process.env['code']
-const querystring = require("querystring");
+//const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
   // Only allow POST
@@ -12,11 +12,8 @@ exports.handler = async (event, context) => {
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
 	const prs = JSON.parse(event.body)
-	console.log("GOT: " + prs['code'])
-	console.log("GOT: " + JSON.parse(event.body).code)
-	console.log("RESPONSE:" + prs)
 
-	if (event.body.code === code) { 
+	if (prs['code'] === code) { 
 	const data = {
 		user: thing.user,
 		profile: thing.profile,
@@ -25,18 +22,21 @@ exports.handler = async (event, context) => {
 		photo: thing.photo,
 		img_margin: "0",
 		display: thing.display,
-		links: params.links
+		links: prs.links
 	}
 	fs.writeFileSync("config/links.json", data)
+		console.log("Updated! (200)")
   	return {
     	statusCode: 200,
   	};
 	} else {
+		console.log("Wrong code! Please try again (403)")
 		return {
 			statusCode: 403,
 		}
 	}
 } else {
+		console.log("Wrong method! Please try again (405)")
 		return {
 			statusCode: 405,
 		}
