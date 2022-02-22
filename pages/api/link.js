@@ -1,9 +1,8 @@
 const fs = require('fs');
 import jsonData from '/config/links.json';
+const code = process.env['code']
 
 export default function handler(req, res) {
-
-
   if (req.method === 'POST') {
 		//const ext = fs.readFileSync(file);
 		const thing = jsonData
