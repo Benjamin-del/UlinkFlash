@@ -10,7 +10,7 @@ exports.handler = async (event, context) => {
   }
   // queryStringParameters – it’ll be in the event body encoded as a query string
   const params = querystring.parse(event.body);
-	const dt = fs.readFileSync("config/links.json")
+	const dt = fs.readFileSync("/config/links.json")
 	const thing = JSON.parse(dt)
 	if (params.code === code) { 
 	const data = {
@@ -23,7 +23,7 @@ exports.handler = async (event, context) => {
 		display: thing.display,
 		links: params.links
 	}
-	fs.writeFileSync("config/links.json", data)
+	fs.writeFileSync("/config/links.json", data)
   	return {
     	statusCode: 200,
   	};
