@@ -1,5 +1,5 @@
 const fs = require('fs');
-import thing from '/config/links.json';
+//import thing from '/config/links.json';
 const code = process.env['code']
 
 export default function handler(req, res) {
