@@ -1,7 +1,7 @@
 {
   "functions": {
     "pages/api/link.js": {
-      "includeFiles": "/public/link.json"
+      "includeFiles": "../public/link.json"
     }
   }
 }
