@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import data from '/config/links.json';
+import data from '/public/config/links.json';
 
 export default function Home() {
 
