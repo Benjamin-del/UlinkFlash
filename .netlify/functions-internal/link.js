@@ -11,6 +11,7 @@ exports.handler = async (event, context) => {
 	const params = querystring.parse(event.body);
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
+	console.log(params.code)
 	if (params.code === code) { 
 	const data = {
 		user: thing.user,
@@ -28,7 +29,7 @@ exports.handler = async (event, context) => {
   	};
 	} else {
 		return {
-			statusCode: 405,
+			statusCode: 403,
 		}
 	}
 } else {
