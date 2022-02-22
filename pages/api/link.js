@@ -1,12 +1,17 @@
 const fs = require('fs');
-const path = "../public/links.json"
+import path from 'path'
+
+const file = "../public/links.json"
 const code = process.env['code']
-const startFile = fs.readFileSync(path)
-console.log(JSON.parse(startFile))
+const { join } = require('path');
+
 
 export default function handler(req, res) {
+	
+const file = fs.readFileSync(join(__dirname, 'public', 'links.json'), 'utf8');
+
   if (req.method === 'POST') {
-		const ext = fs.readFileSync(path);
+		const ext = fs.readFileSync(file);
 		const thing = JSON.parse(ext)
 		if (req.body.code === code) {
 			
