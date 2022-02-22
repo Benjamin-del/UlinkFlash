@@ -5,6 +5,7 @@ const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
   // Only allow POST
+	console.log(code)
 
   // queryStringParameters – it’ll be in the event body encoded as a query string
   if (event.httpMethod === "POST") {
@@ -12,7 +13,8 @@ exports.handler = async (event, context) => {
 	console.log(event.body)
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
-	console.log(event.body.code)
+	const prs = JSON.parse(event.body)
+	console.log(prs.code)
 	if (event.body.code === code) { 
 	const data = {
 		user: thing.user,
