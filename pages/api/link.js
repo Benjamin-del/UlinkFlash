@@ -1,18 +1,12 @@
 const fs = require('fs');
-import path from 'path'
-
-const file = "../public/links.json"
-const code = process.env['code']
-const { join } = require('path');
-
+import jsonData from '/config/links.json';
 
 export default function handler(req, res) {
-	
-const file = fs.readFileSync(join(__dirname, 'public', 'links.json'), 'utf8');
+
 
   if (req.method === 'POST') {
-		const ext = fs.readFileSync(file);
-		const thing = JSON.parse(ext)
+		//const ext = fs.readFileSync(file);
+		const thing = JSON.parse(jsonData)
 		if (req.body.code === code) {
 			
 			const data = {
@@ -26,7 +20,7 @@ const file = fs.readFileSync(join(__dirname, 'public', 'links.json'), 'utf8');
 				links: req.body.links
 			}
 			const data2write = JSON.stringify(data, null, 2)
-			fs.writeFileSync(path, data2write);	
+			fs.writeFileSync('/config/links.json', data2write);	
 			res.json(data)
 			res.status(200)
 			res.end()
@@ -37,20 +31,3 @@ const file = fs.readFileSync(join(__dirname, 'public', 'links.json'), 'utf8');
 		res.end()
 	}
 }
-
-/*
-{
-  "user": "instagramer",
-  "profile": "https://instagram.com/benmmonster",
-  "symbol": "@",
-  "name": "Ulink Beta Tester",
-  "photo": "https://cdn.glitch.com/35409746-8e4a-406e-ac47-16c4db92cad8%2F10x100profile.jpeg",
-  "img_margin": "0",
-  "display":"Proud Ulink User",
-  
-  "links":[
-    {"id":"0","title":"LINK 1!","url":"https://example.com"},
-    {"id":"2","title":"LINK 2","url":"https://example.com"}
-  ]
-}
-*/
