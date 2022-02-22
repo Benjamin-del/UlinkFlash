@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
   if (event.httpMethod === "POST") {
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
-	const prs = JSON.stringify(event.body)
+	const prs = JSON.parse(event.body)
 	console.log("GOT: " + prs['code'])
 	console.log("GOT: " + JSON.parse(event.body).code)
 	console.log("RESPONSE:" + prs)
