@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
 
   // queryStringParameters – it’ll be in the event body encoded as a query string
   if (event.httpMethod === "POST") {
-	const dt = fs.readFileSync("config/links.json")
+	const dt = fs.readFileSync("/tmp/config/links.json")
 	const thing = JSON.parse(dt)
 	const prs = JSON.parse(event.body)
 
@@ -25,7 +25,7 @@ exports.handler = async (event, context) => {
 		links: prs.links
 	}
 	const data2write = JSON.stringify(data);
-	fs.writeFileSync("config/links.json", data2write)
+	fs.writeFileSync("/tmp/config/links.json", data2write)
 		console.log("Updated! (200)")
   	return {
     	statusCode: 200,
