@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
   if (req.method === 'POST') {
 		//const ext = fs.readFileSync(file);
-		const thing = JSON.parse(jsonData)
+		const thing = jsonData
 		if (req.body.code === code) {
 			
 			const data = {
