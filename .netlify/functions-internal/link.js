@@ -5,11 +5,10 @@ const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
   // Only allow POST
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
-  }
+
   // queryStringParameters – it’ll be in the event body encoded as a query string
-  const params = querystring.parse(event.body);
+  if (event.httpMethod === "POST") {
+	const params = querystring.parse(event.body);
 	const dt = fs.readFileSync("config/links.json")
 	const thing = JSON.parse(dt)
 	if (params.code === code) { 
@@ -32,4 +31,9 @@ exports.handler = async (event, context) => {
 			statusCode: 405,
 		}
 	}
+} else {
+		return {
+			statusCode: 405,
+		}
+}
 };
