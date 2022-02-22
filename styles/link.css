@@ -1,0 +1,124 @@
+/* CHANGE LINE 25 IN INDEX.HTML TO  <link rel="stylesheet" href="/styles/gradient.css" /> TO USE ME */
+
+/* OPTIONS */
+:root {
+  --color: #1A4EB4;
+  --speed: 0.3s;
+  --image: url(https://live.staticflickr.com/65535/51711634426_458cef5415_h.jpg);
+  --hover_color: white; 
+/* Font */  
+  --fontname: "Poppins";
+  --fontfamily: sans-serif;
+/* Root Vars */
+  --font-size: 1em;
+  --width: 70%;
+}
+
+
+body {
+  background-image: var(--image);
+  background-position: 50% top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  font-family: var(--fontname), var(--fontfamily);
+  background-color: #3BAD67;
+  color: var(--color);
+}
+.h1 {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: -0.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+a {
+  text-align: center;
+}
+
+.link {
+  border-radius: 40px;
+  margin: auto;
+  width: var(--width);
+  border: 3px solid var(--color);
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 10px;
+  color: var(--color);
+  transition: var(--speed);
+
+}
+
+.link:hover {
+  background-color: var(--color);
+  color: var(--hover_color);
+}
+a:hover {
+  color: var(--2color)
+}
+
+
+.img {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 3px solid var(--color);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a {
+  font-weight: bold;
+  text-align: center;
+  font-size: var(--font_size);
+  font-family: var(--fontname), var(--fontfamily);
+  margin-bottom: 0;
+  margin-bottom: -0.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  color: var(--color);
+
+}
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border: 3px solid var(--color);
+}
+
+.link-cont {
+	width: var(--width)
+}
