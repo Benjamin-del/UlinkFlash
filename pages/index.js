@@ -35,7 +35,6 @@ const linkItems = links.map((thing) =>
 		</div>
     <div id="links" className="link-cont">{linkItems}</div>
     <p id="Attribution" className="atr"></p>
-    <script src="/js/icons.js"></script>
 		</main>
 
 
