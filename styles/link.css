@@ -4,7 +4,7 @@
 :root {
   --color: #1A4EB4;
   --speed: 0.3s;
-  --image: url(https://live.staticflickr.com/65535/51711634426_458cef5415_h.jpg);
+  --image: url(/backround.webp);
   --hover_color: white; 
 /* Font */  
   --fontname: "Poppins";
@@ -69,16 +69,6 @@ a:hover {
   color: var(--2color)
 }
 
-
-.img {
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  border: 3px solid var(--color);
-}
-
 a:link {
   text-decoration: none;
 }
@@ -111,14 +101,24 @@ a {
 }
 
 img {
-  border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: solid;
-  border: 3px solid var(--color);
+  border-radius: 50% !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-style: solid !important;
+  border: 3px solid var(--color) !important;
 }
 
 .link-cont {
 	width: var(--width)
+}
+
+#head {
+	width: 100%;
+}
+
+.center-img {
+	  width: 100%;
+    display: flex;
+    justify-content: center;
 }

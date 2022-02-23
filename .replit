@@ -1,2 +1,2 @@
-run = 'npm run dev'
+run = 'yarn run start'
 entrypoint = 'pages/index.js'
